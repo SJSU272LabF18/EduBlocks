@@ -5,10 +5,10 @@ PROJECT IDEAS
 
 ## Presented By: 
 --------------
-Akhilesh Anand 
-Vishwanath Manvi
-Jasmine Dhunna 
-Sanjay Nag Ravishankar
+1. Akhilesh Anand 
+2. Vishwanath Manvi
+3. Jasmine Dhunna 
+4. Sanjay Nag Ravishankar
 
                                                       
 ## 1. Decentralized Digital Identity Management System
