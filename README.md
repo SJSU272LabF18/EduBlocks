@@ -11,7 +11,7 @@ PROJECT IDEAS
 4. Sanjay Nag Bangalore Ravishankar
 
                                                       
-## 1. Decentralized Digital Identity Management System
+## 1. Decentralized Digital Identity Management System - APPROVED
 --------------------------------
 Implement a decentralized digital identify management system using Hyperledger to demonstrate below use case.
 
