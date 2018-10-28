@@ -1,15 +1,14 @@
 # Project-Team-14
-PROJECT IDEAS
+PROJECT IDEA
 
 ## Team Name : Tech Titans
 
 ## Presented By: 
 --------------
 1. Akhilesh Anand 
-2. Vishwanath Manvi
-3. Jasmine Dhunna 
-4. Sanjay Nag Bangalore Ravishankar
-
+2. Jasmine Dhunna 
+3. Sanjay Nag Bangalore Ravishankar
+4. Vishwanath Manvi
                                                       
 ## 1. Decentralized Digital Identity Management System - APPROVED
 --------------------------------
@@ -28,6 +27,7 @@ This process takes months and students have to produce their personal identifiab
 
 ### Proposed methodology/ resources, etc:
 1. Implement a permissioned blockchain using Hyperledger Fabric open source project and deploy it on IBM Cloud. 
-2. Leverage Hyperledger Indy framework for identity management 
-3. Implement REST APIs for various business entities involved. 
-4. Implement a simple web application to demonstrate the students application journey highlighted above.
+2. Leverage Hyperledger Indy framework for identity management. 
+3. Use Hyperledger Compose tool for creating smart contracts.
+4. Implement REST APIs for various business entities involved.
+5. Implement a simple web application to demonstrate the students application journey highlighted above.
