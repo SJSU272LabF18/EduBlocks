@@ -31,23 +31,3 @@ This process takes months and students have to produce their personal identifiab
 2. Leverage Hyperledger Indy framework for identity management 
 3. Implement REST APIs for various business entities involved. 
 4. Implement a simple web application to demonstrate the students application journey highlighted above.
-
-
-## 2. RightJobs4.me (Job recommendation engine)
---------------------------------
-RightJobs4.me aggregates jobs from across job sites like Linkedin, Indeed, Monster, Glassdoor and then recommends jobs that best match the users profile improving their odds of landing the right job.
-
-### Project Abstract:
-
-1. Public linkedin profiles are ingested to build model for relevant skills and credentials for existing jobs at various companies and locations.
-2. Jobs data is then ingested on a daily basis from multiple job sites to build the job model data that uses title, job description, skills and experience required, etc.
-3. ML algorithm uses above models to match a user's profile and recommend top matching jobs. 
-4. Matching will also consider 
-        4.1 Match users data with job postings job description data
-        4.2 Match users data with profile data of other employees working in the company for the same role.
-
-
-### Proposed methodology/ resources, etc:
-1. Use Python Beautiful Soup library for web scraping Linkedin and job sites and prepare it.
-2. Use Pandas for ingesting prepared data.
-3. Use Scikit learn for running ML algorithms for the recommendation engine.
