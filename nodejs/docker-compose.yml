@@ -145,117 +145,117 @@ services:
 
   #
   #
-  bob:
-    image: indy-agentjs
-    command: "bash -c 'npm start'"
-    environment:
-      - ICON_SRC=http://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue-hi.png
-      - THEME=BurlyWood
-      - PORT=3001
-      - NAME=Bob
-      - EMAIL=bob@byu.edu
-      - PASSWORD=123
-      - USERNAME=bob
-      - PUBLIC_DID_ENDPOINT=173.17.0.160:3001
-      - RUST_LOG=${RUST_LOG}
-      - TEST_POOL_IP=${TEST_POOL_IP}
-    ports:
-      - 3001:3001
-    depends_on:
-      - node1
-      - node2
-      - node3
-      - node4
-      - alice
-    networks:
-      services:
-        ipv4_address: 173.17.0.160
-    volumes:
-      - node1-data:/home/indy/ledger
+  # bob:
+  #   image: indy-agentjs
+  #   command: "bash -c 'npm start'"
+  #   environment:
+  #     - ICON_SRC=http://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue-hi.png
+  #     - THEME=BurlyWood
+  #     - PORT=3001
+  #     - NAME=Bob
+  #     - EMAIL=bob@byu.edu
+  #     - PASSWORD=123
+  #     - USERNAME=bob
+  #     - PUBLIC_DID_ENDPOINT=173.17.0.160:3001
+  #     - RUST_LOG=${RUST_LOG}
+  #     - TEST_POOL_IP=${TEST_POOL_IP}
+  #   ports:
+  #     - 3001:3001
+  #   depends_on:
+  #     - node1
+  #     - node2
+  #     - node3
+  #     - node4
+  #     - alice
+  #   networks:
+  #     services:
+  #       ipv4_address: 173.17.0.160
+  #   volumes:
+  #     - node1-data:/home/indy/ledger
 
-  faber:
-    image: indy-agentjs
-    command: "bash -c 'npm start'"
-    environment:
-      - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
-      - THEME=OliveDrab
-      - PORT=3002
-      - NAME=Faber College
-      - EMAIL=admin@faber.edu
-      - PASSWORD=123
-      - USERNAME=faber
-      - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
-      - RUST_LOG=${RUST_LOG}
-      - TEST_POOL_IP=${TEST_POOL_IP}
-    ports:
-      - 3002:3002
-    depends_on:
-      - node1
-      - node2
-      - node3
-      - node4
-      - alice
-    networks:
-      services:
-        ipv4_address: 173.17.0.170
-    volumes:
-      - node1-data:/home/indy/ledger
+  # faber:
+  #   image: indy-agentjs
+  #   command: "bash -c 'npm start'"
+  #   environment:
+  #     - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
+  #     - THEME=OliveDrab
+  #     - PORT=3002
+  #     - NAME=Faber College
+  #     - EMAIL=admin@faber.edu
+  #     - PASSWORD=123
+  #     - USERNAME=faber
+  #     - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
+  #     - RUST_LOG=${RUST_LOG}
+  #     - TEST_POOL_IP=${TEST_POOL_IP}
+  #   ports:
+  #     - 3002:3002
+  #   depends_on:
+  #     - node1
+  #     - node2
+  #     - node3
+  #     - node4
+  #     - alice
+  #   networks:
+  #     services:
+  #       ipv4_address: 173.17.0.170
+  #   volumes:
+  #     - node1-data:/home/indy/ledger
 
-  acme:
-    image: indy-agentjs
-    command: "bash -c 'npm start'"
-    environment:
-      - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
-      - THEME=LightSteelBlue
-      - PORT=3003
-      - NAME=Acme Corporation
-      - EMAIL=boss@acme.com
-      - PASSWORD=123
-      - USERNAME=acme
-      - PUBLIC_DID_ENDPOINT=173.17.0.180:3003
-      - RUST_LOG=${RUST_LOG}
-      - TEST_POOL_IP=${TEST_POOL_IP}
-    ports:
-      - 3003:3003
-    depends_on:
-      - node1
-      - node2
-      - node3
-      - node4
-      - alice
-    networks:
-      services:
-        ipv4_address: 173.17.0.180
-    volumes:
-      - node1-data:/home/indy/ledger
+  # acme:
+  #   image: indy-agentjs
+  #   command: "bash -c 'npm start'"
+  #   environment:
+  #     - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
+  #     - THEME=LightSteelBlue
+  #     - PORT=3003
+  #     - NAME=Acme Corporation
+  #     - EMAIL=boss@acme.com
+  #     - PASSWORD=123
+  #     - USERNAME=acme
+  #     - PUBLIC_DID_ENDPOINT=173.17.0.180:3003
+  #     - RUST_LOG=${RUST_LOG}
+  #     - TEST_POOL_IP=${TEST_POOL_IP}
+  #   ports:
+  #     - 3003:3003
+  #   depends_on:
+  #     - node1
+  #     - node2
+  #     - node3
+  #     - node4
+  #     - alice
+  #   networks:
+  #     services:
+  #       ipv4_address: 173.17.0.180
+  #   volumes:
+  #     - node1-data:/home/indy/ledger
 
-  thrift:
-    image: indy-agentjs
-    command: "bash -c 'npm start'"
-    environment:
-      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
-      - THEME=Coral
-      - PORT=3004
-      - NAME=Thrift Bank
-      - EMAIL=owner@thrift.com
-      - PASSWORD=123
-      - USERNAME=thrift
-      - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
-      - RUST_LOG=${RUST_LOG}
-      - TEST_POOL_IP=${TEST_POOL_IP}
-    ports:
-      - 3004:3004
-    depends_on:
-      - node1
-      - node2
-      - node3
-      - node4
-      - alice
-    networks:
-      services:
-        ipv4_address: 173.17.0.190
-    volumes:
-      - node1-data:/home/indy/ledger
+  # thrift:
+  #   image: indy-agentjs
+  #   command: "bash -c 'npm start'"
+  #   environment:
+  #     - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
+  #     - THEME=Coral
+  #     - PORT=3004
+  #     - NAME=Thrift Bank
+  #     - EMAIL=owner@thrift.com
+  #     - PASSWORD=123
+  #     - USERNAME=thrift
+  #     - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
+  #     - RUST_LOG=${RUST_LOG}
+  #     - TEST_POOL_IP=${TEST_POOL_IP}
+  #   ports:
+  #     - 3004:3004
+  #   depends_on:
+  #     - node1
+  #     - node2
+  #     - node3
+  #     - node4
+  #     - alice
+  #   networks:
+  #     services:
+  #       ipv4_address: 173.17.0.190
+  #   volumes:
+  #     - node1-data:/home/indy/ledger
 
 volumes:
   webserver-cli:
