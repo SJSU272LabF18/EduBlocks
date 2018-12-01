@@ -1,59 +1,110 @@
-<div id="relationships" class="tab" style="display:none;" >
-    <button class="w3-right w3-btn w3-white w3-border" style="margin:15px 20px;" onclick="document.getElementById('newRelationshipModel').style.display='block'">Send New Connection Request</button>
-    <div class="w3-padding">
-        <div class="w3-third w3-border" style="width:33%; height:85vh; overflow:scroll;">
-            <%for(let relationship of relationships) {%>
-            <a onclick="showDiv('<%=relationship.their_did%>', 'relationshipsClass')">
-                <div class="w3-bar w3-btn w3-white w3-border" style="width:100%;">
-                    <svg class="w3-bar-item" width="70" height="70" data-jdenticon-value="<%=relationship.their_did%>"></svg>
-                    <p class="w3-bar-item"><%=relationship.metadata.name%></p>
-                </div>
-            </a>
-            <br>
-            <%}%>
-        </div>
-        <%for(let relationship of relationships) {%>
-            <div id="<%=relationship.their_did%>" class="w3-padding relationshipsClass" style="float:left;width:66%;margin-bottom: 100px;display:none;">
-                <div class="w3-border w3-container" style="margin:10px 50px;">
-                    <div class="w3-cell-middle" style="display: block;margin: auto;">
-                        <svg width="320" height="320" data-jdenticon-value="<%=relationship.their_did%>"></svg>
-                    </div>
-                    <div class="w3-cell" style="display: block;margin: auto;">
-                        <%if(relationship.metadata.name) {%>
-                        <p><b><%=relationship.metadata.name%></b>
-                            <!--<a class="w3-btn w3-white" onclick="startChat(<%=relationship.their_did%>)">-->
-                                <!--<i class="fa fa-comments fa-2x"></i>-->
-                            <!--</a>-->
-                        </p>
-                        <%}%>
-                        <div style="display:block;width:50%;margin:auto;">
-                            <fieldset>
-                                <legend class="" style="border:none;margin:10px;">Relationship DIDs</legend>
-                                <p>My Did: <%=relationship.my_did%></p>
-                                <p>Their Did: <%=relationship.their_did%></p>
-                            </fieldset>
-                        </div>
-                        <p>Their Public Did: <%=relationship.metadata.theirEndpointDid%></p>
-                        <p><b>Proofs:</b></p>
-                        <%if(relationship.metadata.proofs) {%>
-                            <%for(let proof of relationship.metadata.proofs) {%>
-                                <div class="w3-bar w3-card">
-                                    <div class="w3-bar-item">
-                                        <p style="text-decoration: underline;"><%=proof.request.name%></p>
-                                        <%for(let attr of Object.keys(proof.request.requested_attributes)) {%>
-                                            <p><%=proof.request.requested_attributes[attr].name%>: <%=proof.requested_proof.revealed_attrs[attr].raw%></p>
-                                        <%}%>
-                                    </div>
-                                    <div class="w3-bar-item">
-                                        <button class="w3-btn w3-white w3-border" style="display:block;margin: 20px 20px;height: 100px;width:100px;" type="submit" onclick="validateProof(this.parentNode, <%=JSON.stringify(proof)%>)">Validate</button>
-                                    </div>
-                                </div>
-                                <br><br>
-                            <%}%>
-                        <%}%>
-                    </div>
-                </div>
-            </div>
-        <%}%>
+<div id="relationships" class="tabs_screen">
+  <div class="row">
+    <br /><br /><br />
+    <div class="col s6 offset-s3">
+      <button
+        style="background: #2b0045; width: 100%"
+        class="btn btn-large waves-effect waves-light modal-trigger"
+        href="#didModal"
+        name="action"
+      >
+        Add a New Connection
+      </button>
     </div>
+  </div>
+
+  <div id="didModal" class="modal">
+    <div class="modal-content">
+      <h5>Create a New Relationship</h5>
+      <br />
+      <form action="/api/send_connection_request" method="POST" target="_self">
+        <div class="input-field col s12">
+          <input
+            id="endpointdid"
+            type="text"
+            name="did"
+            class="validate"
+            required
+          />
+          <label for="endpointdid">Recipient's Endpoint DID:</label>
+        </div>
+        <button
+          style="background: #2b0045"
+          class="btn  waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Send Connection Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <%if(relationships.length>0) {%>
+  <div class="container">
+    <ul class="collection  z-depth-4">
+      <%for(let relationship of relationships) {%>
+      <li class="collection-item avatar">
+        <svg
+          class="material-icons circle"
+          width="70"
+          height="70"
+          data-jdenticon-value="<%=relationship.their_did%>"
+        ></svg>
+        <span class="title"><%=relationship.metadata.name%></span>
+      </li>
+    </ul>
+    <%}%>
+  </div>
+  <%}%> <%for(let relationship of relationships) {%>
+  <div id="<%=relationship.their_did%>" class="modal">
+    <div class="modal-content center-align">
+      <svg
+        width="320"
+        height="320"
+        data-jdenticon-value="<%=relationship.their_did%>"
+      ></svg>
+
+      <%if(relationship.metadata.name) {%>
+      <p><b><%=relationship.metadata.name%></b></p>
+      <%}%>
+      <div style="display:block;width:50%;margin:auto;">
+        <fieldset>
+          <legend class="" style="border:none;margin:10px;">
+            Relationship DIDs
+          </legend>
+          <p>My Did: <%=relationship.my_did%></p>
+          <p>Their Did: <%=relationship.their_did%></p>
+        </fieldset>
+      </div>
+      <p>Their Public Did: <%=relationship.metadata.theirEndpointDid%></p>
+      <%if(relationship.metadata.proofs) {%>
+      <p><b>Proofs:</b></p>
+      <%for(let proof of relationship.metadata.proofs) {%>
+      <div class="w3-bar w3-card">
+        <div class="w3-bar-item">
+          <p style="text-decoration: underline;"><%=proof.request.name%></p>
+          <%for(let attr of Object.keys(proof.request.requested_attributes)) {%>
+          <p>
+            <%=proof.request.requested_attributes[attr].name%>:
+            <%=proof.requested_proof.revealed_attrs[attr].raw%>
+          </p>
+          <%}%>
+        </div>
+        <div class="w3-bar-item">
+          <button
+            class="w3-btn w3-white w3-border"
+            style="display:block;margin: 20px 20px;height: 100px;width:100px;"
+            type="submit"
+            onclick="validateProof(this.parentNode, <%=JSON.stringify(proof)%>)"
+          >
+            Validate
+          </button>
+        </div>
+      </div>
+      <br /><br />
+      <%}%> <%}%>
+    </div>
+  </div>
+  <%}%>
 </div>
