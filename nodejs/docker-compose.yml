@@ -173,33 +173,33 @@ services:
   #   volumes:
   #     - node1-data:/home/indy/ledger
 
-  # faber:
-  #   image: indy-agentjs
-  #   command: "bash -c 'npm start'"
-  #   environment:
-  #     - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
-  #     - THEME=OliveDrab
-  #     - PORT=3002
-  #     - NAME=Faber College
-  #     - EMAIL=admin@faber.edu
-  #     - PASSWORD=123
-  #     - USERNAME=faber
-  #     - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
-  #     - RUST_LOG=${RUST_LOG}
-  #     - TEST_POOL_IP=${TEST_POOL_IP}
-  #   ports:
-  #     - 3002:3002
-  #   depends_on:
-  #     - node1
-  #     - node2
-  #     - node3
-  #     - node4
-  #     - alice
-  #   networks:
-  #     services:
-  #       ipv4_address: 173.17.0.170
-  #   volumes:
-  #     - node1-data:/home/indy/ledger
+  faber:
+    image: indy-agentjs
+    command: "bash -c 'npm start'"
+    environment:
+      - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
+      - THEME=OliveDrab
+      - PORT=3002
+      - NAME=Faber College
+      - EMAIL=admin@faber.edu
+      - PASSWORD=123
+      - USERNAME=faber
+      - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
+      - RUST_LOG=${RUST_LOG}
+      - TEST_POOL_IP=${TEST_POOL_IP}
+    ports:
+      - 3002:3002
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - alice
+    networks:
+      services:
+        ipv4_address: 173.17.0.170
+    volumes:
+      - node1-data:/home/indy/ledger
 
   # acme:
   #   image: indy-agentjs

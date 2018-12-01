@@ -40,14 +40,18 @@
                   <ul class="tabs tabs-transparent">
                     <li class="tab"><a class="active"  onclick="showTab('credentials')">Wallet</a></li>
                     <li class="tab"><a onclick="showTab('relationships')">Connections</a></li>
+                    <li class="tab"><a onclick="showTab('messages')">Messages</a></li>
                   </ul>
                 </div>
               </nav>
 
-
+     <h5>  
+        My Endpoint DID: <%=endpointDid%>
+      </h5>
               <div class="row">
                     <% include credentials.ejs %> 
                     <% include relationships.ejs %> 
+                    <% include messages.ejs %>
               </div>
 
     <!-- <div id="menubar" class="w3-bar w3-theme">
