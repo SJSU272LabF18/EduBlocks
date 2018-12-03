@@ -52,7 +52,7 @@
             height="70"
             data-jdenticon-value="<%=relationship.their_did%>"
           ></svg>
-          <span class="title"><%=relationship.metadata.name%></span>
+          <h4 class="title"><%=relationship.metadata.name%></h4>
         </li>
       </a>
     </ul>
@@ -62,18 +62,12 @@
 
   <div id="<%=relationship.their_did%>" class="modal">
     <div class="modal-content center-align">
-      <svg
-        width="320"
-        height="320"
-        data-jdenticon-value="<%=relationship.their_did%>"
-      ></svg>
-
       <%if(relationship.metadata.name) {%>
       <p><b><%=relationship.metadata.name%></b></p>
       <%}%>
       <div style="display:block;width:50%;margin:auto;">
         <fieldset>
-          <legend class="" style="border:none;margin:10px;">
+          <legend  style="border:none;margin:10px;">
             Relationship DIDs
           </legend>
           <p>My Did: <%=relationship.my_did%></p>
@@ -84,8 +78,12 @@
       <%if(relationship.metadata.proofs) {%>
       <p><b>Proofs:</b></p>
       <%for(let proof of relationship.metadata.proofs) {%>
-      <div class="w3-bar w3-card">
-        <div class="w3-bar-item">
+
+        <div class="row">
+      <div class="card z-depth-4">
+        <div class="card-content">
+          <div class="row">
+              <div class="col-s8">
           <p style="text-decoration: underline;"><%=proof.request.name%></p>
           <%for(let attr of Object.keys(proof.request.requested_attributes)) {%>
           <p>
@@ -93,11 +91,12 @@
             <%=proof.requested_proof.revealed_attrs[attr].raw%>
           </p>
           <%}%>
-        </div>
-        <div class="w3-bar-item">
+              </div>
+
+        <div class="col-s4">
           <button
-            class="w3-btn w3-white w3-border"
-            style="display:block;margin: 20px 20px;height: 100px;width:100px;"
+          style="background: #2b0045"
+          class="btn btn-large waves-effect waves-light"
             type="submit"
             onclick="validateProof(this.parentNode, <%=JSON.stringify(proof)%>)"
           >
@@ -105,6 +104,9 @@
           </button>
         </div>
       </div>
+    </div>
+    </div>
+  </div>
       <br /><br />
       <%}%> <%}%>
     </div>

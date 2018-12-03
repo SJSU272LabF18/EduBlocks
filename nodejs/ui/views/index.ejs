@@ -42,6 +42,8 @@
                     <li class="tab"><a onclick="showTab('relationships')">Connections</a></li>
                     <li class="tab"><a onclick="showTab('messages')">Messages</a></li>
                     <li class="tab"><a onclick="showTab('issuing')">Issuing</a></li>
+                    <li class="tab"><a onclick="showTab('proofs')">Proofs</a></li>
+
 
                   </ul>
                 </div>
@@ -55,6 +57,7 @@
                     <% include relationships.ejs %> 
                     <% include messages.ejs %>
                     <% include issuing.ejs %>
+                    <% include proofs.ejs %>
               </div>
 
 
@@ -128,13 +131,13 @@
         xhttp.onload = function() {
           console.log(xhttp);
           if (xhttp.status === 200) {
-            console.log("Validation succeeded");
+            alert("Validation Successful!, This is a Valid Credential");
             div.innerHTML =
               '<i class="fa fa-check" style="color:green;font-size:120px;"></i>';
           } else {
             div.innerHTML =
               '<i class="fa fa-times" style="color:red;font-size:120px;"></i>';
-            console.log("Validation failed");
+              alert("Validation Failed!, This is an invalid Credential");
           }
         };
       }
