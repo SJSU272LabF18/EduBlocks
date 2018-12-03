@@ -21,6 +21,7 @@ ENV LD_LIBRARY_PATH=$HOME/.local/lib:/usr/local/lib:/usr/lib
 
 # Get the dependencies loaded first - this makes rebuilds faster
 COPY --chown=indy:indy package.json .
+COPY --chown=indy:indy ./amritaui ./ui
 RUN npm install
 
 # Copy rest of the app

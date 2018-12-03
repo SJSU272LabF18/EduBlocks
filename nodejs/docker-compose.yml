@@ -114,10 +114,10 @@ services:
   # Agents
   #
   alice:
-    image: indy-agentjs
+    image: indy-agentjs-akhilesh
     build:
       context: .
-      dockerfile: agent.dockerfile
+      dockerfile: akhilesh.dockerfile
     command: "bash -c 'npm start'"
     environment:
       - ICON_SRC=https://media.licdn.com/dms/image/C5103AQHAkoPpridPUw/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=-lWJc7V6jvDp32wO5GDdlSfhgRC42wZcxOReZu36DWA
@@ -173,7 +173,10 @@ services:
   #     - node1-data:/home/indy/ledger
 
   faber:
-    image: indy-agentjs
+    image: indy-agentjs-amrita
+    build:
+      context: .
+      dockerfile: amrita.dockerfile
     command: "bash -c 'npm start'"
     environment:
       - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
@@ -200,61 +203,67 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  # acme:
-  #   image: indy-agentjs
-  #   command: "bash -c 'npm start'"
-  #   environment:
-  #     - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
-  #     - THEME=LightSteelBlue
-  #     - PORT=3003
-  #     - NAME=Acme Corporation
-  #     - EMAIL=boss@acme.com
-  #     - PASSWORD=123
-  #     - USERNAME=acme
-  #     - PUBLIC_DID_ENDPOINT=173.17.0.180:3003
-  #     - RUST_LOG=${RUST_LOG}
-  #     - TEST_POOL_IP=${TEST_POOL_IP}
-  #   ports:
-  #     - 3003:3003
-  #   depends_on:
-  #     - node1
-  #     - node2
-  #     - node3
-  #     - node4
-  #     - alice
-  #   networks:
-  #     services:
-  #       ipv4_address: 173.17.0.180
-  #   volumes:
-  #     - node1-data:/home/indy/ledger
+  acme:
+    image: indy-agentjs-ets
+    build:
+      context: .
+      dockerfile: ets.dockerfile
+    command: "bash -c 'npm start'"
+    environment:
+      - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
+      - THEME=LightSteelBlue
+      - PORT=3003
+      - NAME=Acme Corporation
+      - EMAIL=boss@acme.com
+      - PASSWORD=123
+      - USERNAME=acme
+      - PUBLIC_DID_ENDPOINT=173.17.0.180:3003
+      - RUST_LOG=${RUST_LOG}
+      - TEST_POOL_IP=${TEST_POOL_IP}
+    ports:
+      - 3003:3003
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - alice
+    networks:
+      services:
+        ipv4_address: 173.17.0.180
+    volumes:
+      - node1-data:/home/indy/ledger
 
-  # thrift:
-  #   image: indy-agentjs
-  #   command: "bash -c 'npm start'"
-  #   environment:
-  #     - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
-  #     - THEME=Coral
-  #     - PORT=3004
-  #     - NAME=Thrift Bank
-  #     - EMAIL=owner@thrift.com
-  #     - PASSWORD=123
-  #     - USERNAME=thrift
-  #     - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
-  #     - RUST_LOG=${RUST_LOG}
-  #     - TEST_POOL_IP=${TEST_POOL_IP}
-  #   ports:
-  #     - 3004:3004
-  #   depends_on:
-  #     - node1
-  #     - node2
-  #     - node3
-  #     - node4
-  #     - alice
-  #   networks:
-  #     services:
-  #       ipv4_address: 173.17.0.190
-  #   volumes:
-  #     - node1-data:/home/indy/ledger
+  thrift:
+    image: indy-agentjs-sjsu
+    build:
+      context: .
+      dockerfile: sjsu.dockerfile
+    command: "bash -c 'npm start'"
+    environment:
+      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
+      - THEME=Coral
+      - PORT=3004
+      - NAME=Thrift Bank
+      - EMAIL=owner@thrift.com
+      - PASSWORD=123
+      - USERNAME=thrift
+      - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
+      - RUST_LOG=${RUST_LOG}
+      - TEST_POOL_IP=${TEST_POOL_IP}
+    ports:
+      - 3004:3004
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - alice
+    networks:
+      services:
+        ipv4_address: 173.17.0.190
+    volumes:
+      - node1-data:/home/indy/ledger
 
 volumes:
   webserver-cli:

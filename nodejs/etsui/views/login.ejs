@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edublocks: Login</title>
+
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
+
+
+
+  <body>
+      <p>
+          This is ETS
+        </p>
+    <nav style="background: #2b0045" class="nav-extended">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"
+          ><img src="images/logowhite.png"
+        /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class=" container">
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <div class="row ">
+          <div class="col s12 m6 l6 offset-m3 offset-l3">
+            <div class="card z-depth-4">
+              <div class="card-content">
+                <div class="row center-align">
+                  <img src="images/logodark.png" width="60%" alt="logo" />
+                </div>
+                <span class="card-title center-align ">Login</span>
+
+                <form method="POST" action="/login">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="text" name="username" class="validate" />
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="password" type="password" name="password" class="validate" />
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12 l12 m12">
+                    <button
+                      class="btn waves-effect btn-large waves-light "
+                      style="background: #2b0045;width: 100%;"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                    <span id="loginErrMessage" style="color: red"></span>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        const span = document.getElementById('loginErrMessage');
+        span.textContent = getParameterByName('msg');
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>

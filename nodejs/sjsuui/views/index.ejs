@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%=name%>'s Agent</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
+
+  <body>
+      
+        <nav style="background: #2b0045" class="nav-extended">
+                <div class="nav-wrapper container">
+                  <a id="logo-container" href="#" class="brand-logo"
+                    ><img src="images/logowhite.png"
+                  /></a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="white-text" href="#">Logout</a></li>
+                  </ul>
+                  <br /><br />
+                </div>
+                <div class="nav-content container">
+                  <ul class="tabs tabs-transparent">
+                    <li class="tab"><a class="active"  onclick="showTab('credentials')">Wallet</a></li>
+                    <li class="tab"><a onclick="showTab('relationships')">Connections</a></li>
+                    <li class="tab"><a onclick="showTab('messages')">Messages</a></li>
+                    <li class="tab"><a onclick="showTab('issuing')">Issuing</a></li>
+                    <li class="tab"><a onclick="showTab('proofs')">Proofs</a></li>
+
+
+                  </ul>
+                </div>
+              </nav>
+
+     <h5>  
+        My Endpoint DID: <%=endpointDid%>
+      </h5>
+              <div class="row">
+                    <% include credentials.ejs %> 
+                    <% include relationships.ejs %> 
+                    <% include messages.ejs %>
+                    <% include issuing.ejs %>
+                    <% include proofs.ejs %>
+              </div>
+
+
+    <script>
+
+
+      function showTab(id) {
+        let tabs = document.getElementsByClassName("tabs_screen");
+        for (let i = 0; i < tabs.length; i++) {
+          tabs[i].style.display = "none";
+        }
+        document.getElementById(id).style.display = "block";
+        let tabLinks = document.getElementsByClassName("tab_link");
+        for (i = 0; i < tabLinks.length; i++) {
+          tabLinks[i].style["font-weight"] = "normal";
+        }
+        document.getElementById(`${id}_link`).style["font-weight"] = "bold";
+      }
+
+      let tabs = document.getElementsByClassName("tabs_screen");
+      let hashlink = document.location.hash.replace("#", "");
+      let found = false;
+      for (let tab of tabs) {
+        if (tab.id === hashlink) {
+          showTab(hashlink);
+          found = true;
+        }
+      }
+      if (!found) {
+        window.location.href = window.location.href + "#credentials";
+        showTab("credentials");
+      }
+
+      function request(url, method, message) {
+        console.log(message);
+        console.log(`${method}ing ${url}: ${message}`);
+        let xhttp = new XMLHttpRequest();
+        xhttp.open(method, url, true);
+        if (message) {
+          xhttp.setRequestHeader("Content-Type", "application/json");
+          xhttp.send(message);
+        } else {
+          xhttp.send();
+        }
+        location.reload();
+      }
+
+      showDiv(
+        document.getElementById("currentProofRequest").value,
+        "proofRequestsClass"
+      );
+
+
+      function showDiv(id, className) {
+        let tabs = document.getElementsByClassName(className);
+        for (let i = 0; i < tabs.length; i++) {
+          tabs[i].style.display = "none";
+        }
+        console.log("showing div: ", id);
+        document.getElementById(id).style.display = "block";
+      }
+
+      function validateProof(div, proof) {
+        div.innerHTML =
+          '<i class="fa fa-spinner fa-spin" style="font-size:100px;"></i>';
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/proofs/validate", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        console.log(proof);
+        xhttp.send(JSON.stringify(proof));
+        xhttp.onload = function() {
+          console.log(xhttp);
+          if (xhttp.status === 200) {
+            alert("Validation Successful!, This is a Valid Credential");
+            div.innerHTML =
+              '<i class="fa fa-check" style="color:green;font-size:120px;"></i>';
+          } else {
+            div.innerHTML =
+              '<i class="fa fa-times" style="color:red;font-size:120px;"></i>';
+              alert("Validation Failed!, This is an invalid Credential");
+          }
+        };
+      }
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+               var elems = document.querySelectorAll('.modal');
+               var instances = M.Modal.init(elems, options);
+             });
+             $(document).ready(function(){
+               $('.modal').modal();
+             });
+
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+
+           </script>
+
+
+  </body>
+</html>

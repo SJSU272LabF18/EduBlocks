@@ -1,0 +1,89 @@
+<div id="messages" class="tabs_screen">
+  <%if(messages.length>0) {%> <%for(var message of messages) {%>
+  <div class="row">
+    <div class="col s4 offset-s4">
+      <div class="card z-depth-4">
+        <div class="card-content center-align">
+          <h5>Message</h5>
+          <span>
+            <b>From : </b>
+
+            <%if(message.relationshipName) {%>
+            <p><b>From: <%=message.relationshipName%></b></p>
+            <%}%> </span
+          ><br />
+          <span> <b>Type </b> <%=message.message.type%> </span><br />
+          <span> <b>Recieved On</b> <%=message.timestamp%></span><br />
+
+          <div>
+            <%if (message.message.type === messageTypes.connections.REQUEST) {%>
+            <form>
+              <input
+                type="hidden"
+                id="connection_message_id"
+                value="<%=message.id%>"
+              />
+              <input type="text" id="connection_name" required /> <%if
+              (message.links.accept) {%>
+              <button
+                style="background: #2b0045"
+                class="btn  waves-effect waves-light"
+                type="submit"
+                onclick="request('<%=message.links.accept.href%>', '<%=message.links.accept.method%>', JSON.stringify({ name: document.getElementById('connection_name').value, messageId: document.getElementById('connection_message_id').value}))"
+              >
+                Accept Connection Request
+              </button>
+              <%}%> <%if (message.links.reject) {%>
+              <button
+                style="background: #2b0045"
+                class="btn  waves-effect waves-light"
+                type="submit"
+                onclick="request('<%=message.links.reject.href%>', '<%=message.links.reject.method%>')"
+              >
+                Reject Connection Request
+              </button>
+              <%}%> <br /><br />
+            </form>
+            <%} else if(message.message.type === messageTypes.proofs.REQUEST)
+            {%>
+            <p><b>Requested Attributes:</b></p>
+            <%for(let attr of
+            Object.keys(message.message.message.proofRequest.requested_attributes))
+            {%>
+            <p>
+              <%=message.message.message.proofRequest.requested_attributes[attr].name%>
+            </p>
+            <%}%> <%for(let link of message.links) {%>
+            <button
+              style="background: #2b0045"
+              class="btn  waves-effect waves-light"
+              type="submit"
+              onclick="request('<%=link.href%>', '<%=link.method%>', '<%=link.message%>')"
+            >
+              <%=link.name%>
+            </button>
+            <%}%> <br /><br />
+            <%} else {%> <%if(message.links) {%> <%for(let link of
+            message.links) {%>
+            <button
+              style="background: #2b0045"
+              class="btn  waves-effect waves-light"
+              type="submit"
+              onclick="request('<%=link.href%>', '<%=link.method%>', '<%=link.message%>')"
+            >
+              <%=link.name%>
+            </button>
+            <%}%> <%} else {%>
+            <p>Message:</p>
+            <p><%=message.message.message%></p>
+            <%}%> <br /><br />
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%}%> <%} else{ %>
+  <h4>Sorry No Messages Here</h4>
+  <%}%>
+</div>
