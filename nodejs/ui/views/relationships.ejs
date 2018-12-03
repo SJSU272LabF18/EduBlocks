@@ -44,22 +44,21 @@
   <div class="container">
     <ul class="collection  z-depth-4">
       <%for(let relationship of relationships) {%>
-        <a  class="modal-trigger" href="#<%=relationship.their_did%>" >
+      <a class="modal-trigger" href="#<%=relationship.their_did%>">
         <li class="collection-item avatar">
-        <svg
-          class="material-icons circle"
-          width="70"
-          height="70"
-          data-jdenticon-value="<%=relationship.their_did%>"
-        ></svg>
-        <span class="title"><%=relationship.metadata.name%></span>
-      </li>
+          <svg
+            class="material-icons circle"
+            width="70"
+            height="70"
+            data-jdenticon-value="<%=relationship.their_did%>"
+          ></svg>
+          <span class="title"><%=relationship.metadata.name%></span>
+        </li>
       </a>
     </ul>
     <%}%>
   </div>
   <%}%> <%for(let relationship of relationships) {%>
-
 
   <div id="<%=relationship.their_did%>" class="modal">
     <div class="modal-content center-align">

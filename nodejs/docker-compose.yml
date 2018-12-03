@@ -120,13 +120,12 @@ services:
       dockerfile: agent.dockerfile
     command: "bash -c 'npm start'"
     environment:
-      - ICON_SRC=https://maxcdn.icons8.com/Share/icon/Users/person_female1600.png
-      - THEME=DarkGray
+      - ICON_SRC=https://media.licdn.com/dms/image/C5103AQHAkoPpridPUw/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=-lWJc7V6jvDp32wO5GDdlSfhgRC42wZcxOReZu36DWA
       - PORT=3000
-      - NAME=Alice
-      - EMAIL=alice@faber.edu
+      - NAME=Akhilesh Anand
+      - EMAIL=akhilesh.anand@gmail.com
       - PASSWORD=123
-      - USERNAME=alice
+      - USERNAME=akhilesh
       - PUBLIC_DID_ENDPOINT=173.17.0.150:3000
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}

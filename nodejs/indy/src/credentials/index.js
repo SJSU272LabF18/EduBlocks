@@ -58,22 +58,19 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
         let value;
         switch(attr) {
             case "name":
-                value = await indy.pairwise.getAttr(theirDid, 'name') || "Alice";
+                value = await indy.pairwise.getAttr(theirDid, 'name') || "Akhilesh Anand";
                 break;
             case "degree":
-                value = "Bachelor of Science, Marketing";
+                value = "Bachelor of Technology, Computer Science & Engineering";
                 break;
             case "status":
-                value = "graduated";
-                break;
-            case "ssn":
-                value = "123-45-6789";
+                value = "Graduated";
                 break;
             case "year":
-                value = "2015";
+                value = "2018";
                 break;
-            case "average":
-                value = "5";
+            case "GPA":
+                value = "8.75";
                 break;
             default:
                 value = "someValue";
@@ -81,7 +78,6 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
         credentialValues[attr] = {raw: value, encoded: exports.encode(value)};
     }
     console.log(credentialValues);
-
     let [credential] = await sdk.issuerCreateCredential(await indy.wallet.get(), credentialOffer, credentialRequest, credentialValues);
     let message = await indy.crypto.buildAuthcryptedMessage(myDid, theirDid, MESSAGE_TYPES.CREDENTIAL, credential);
     let theirEndpointDid = await indy.did.getTheirEndpointDid(theirDid);

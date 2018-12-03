@@ -1,5 +1,5 @@
 <div id="messages" class="tabs_screen">
-  <%for(var message of messages) {%>
+  <%if(messages.length>0) {%> <%for(var message of messages) {%>
   <div class="row">
     <div class="col s4 offset-s4">
       <div class="card z-depth-4">
@@ -83,5 +83,7 @@
       </div>
     </div>
   </div>
+  <%}%> <%} else{ %>
+  <h4>Sorry No Messages Here</h4>
   <%}%>
 </div>

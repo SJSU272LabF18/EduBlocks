@@ -1,0 +1,188 @@
+Blah
+    <div id="aboutModel" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-l1">
+          <span
+            onclick="document.getElementById('aboutModel').style.display='none'"
+            class="w3-button w3-display-topright"
+            >×</span
+          >
+          <h4>Sovrin Reference Agent</h4>
+        </header>
+        <div class="w3-padding"><p></p></div>
+        <footer class="w3-container w3-theme-l1"><p></p></footer>
+      </div>
+    </div>
+
+    <!-- Send Credential Modal -->
+    <div id="sendCredModel" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-l1">
+          <span
+            onclick="document.getElementById('sendCredModel').style.display='none'"
+            class="w3-button w3-display-topright"
+            >×</span
+          >
+          <h4>Credential Builder</h4>
+        </header>
+        <div class="w3-padding"><p></p></div>
+        <footer class="w3-container w3-theme-l1"><p></p></footer>
+      </div>
+    </div>
+
+    <!-- New Relationship Model -->
+    <div id="newRelationshipModel" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-l1">
+          <span
+            onclick="document.getElementById('newRelationshipModel').style.display='none'"
+            class="w3-button w3-display-topright"
+            >×</span
+          >
+          <h4>Create a New Relationship</h4>
+        </header>
+        <div class="w3-padding">
+          <form
+            class="w3-container w3-card-4 w3-padding"
+            action="/api/send_connection_request"
+            method="POST"
+            target="_self"
+          >
+            <div class="w3-section">
+              Recipient's Endpoint DID:
+              <input class="w3-input" type="text" name="did" required />
+            </div>
+            <input
+              class="w3-btn w3-white w3-border"
+              style="display:block;margin:auto;"
+              type="submit"
+              value="Send Connection Request"
+            />
+          </form>
+        </div>
+        <footer class="w3-container w3-theme-l1"><p></p></footer>
+      </div>
+    </div>
+
+    <!-- New Message Model -->
+    <div id="newMessageModel" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-l1">
+          <span
+            onclick="document.getElementById('newMessageModel').style.display='none'"
+            class="w3-button w3-display-topright"
+            >×</span
+          >
+          <h4>Send a Message</h4>
+        </header>
+        <div class="w3-padding">
+          <!--
+            The socket message way: onsubmit="sendSovrinMessage('urn:sovrin:agent:message_type:sovrin.org/ui/send_message', this)"
+          -->
+          <form
+            class="w3-container w3-card-4 w3-padding"
+            action="/api/send_message"
+            method="POST"
+            target="_self"
+          >
+            <div class="w3-section">
+              Recipient:
+              <input
+                id="send_message_form_did"
+                class="w3-input"
+                type="text"
+                name="did"
+                value="<%=endpointDid%>"
+              />
+            </div>
+            <div class="w3-section">
+              Message:
+              <textarea
+                id="send_message_form_message"
+                class="w3-input"
+                name="message"
+                rows="6"
+              >
+{
+    "type":"SOME_TYPE",
+    "message":"test"
+}</textarea
+              >
+            </div>
+            <input
+              class="w3-btn w3-white w3-border"
+              style="display:block;margin:auto;"
+              type="submit"
+              value="Send Message"
+            />
+          </form>
+        </div>
+        <footer class="w3-container w3-theme-l1"><p></p></footer>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <script>
+      let now = Date.now();
+      let messages = [
+        { author: "you", text: "dummy msg 1", created: now - 60 * 1000 },
+        { author: "me", text: "dummy msg 2", created: now - 3 * 60 * 1000 },
+        { author: "you", text: "dummy msg 3", created: now - 10 * 60 * 1000 },
+        { author: "you", text: "dummy msg 4", created: now - 60 * 60 * 1000 },
+        {
+          author: "me",
+          text: "dummy msg 5",
+          created: now - 1.2 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 6",
+          created: now - 1.5 * 60 * 60 * 1000
+        },
+        {
+          author: "you",
+          text: "dummy msg 7",
+          created: now - 11.5 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 8",
+          created: now - 12 * 60 * 60 * 1000
+        },
+        {
+          author: "you",
+          text: "dummy msg 9",
+          created: now - 13 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 10",
+          created: now - 1.5 * 24 * 60 * 60 * 1000
+        },
+        {
+          author: "you",
+          text: "dummy msg 11",
+          created: now - 1.6 * 24 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 12",
+          created: now - 4 * 24 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 13",
+          created: now - 4.5 * 24 * 60 * 60 * 1000
+        },
+        {
+          author: "you",
+          text: "dummy msg 14",
+          created: now - 14 * 24 * 60 * 60 * 1000
+        },
+        {
+          author: "me",
+          text: "dummy msg 15",
+          created: now - 14.5 * 24 * 60 * 60 * 1000
+        }
+      ].reverse();
+    </script>
