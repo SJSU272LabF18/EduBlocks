@@ -1,7 +1,7 @@
 <div id="relationships" class="tabs_screen">
   <div class="row">
     <br /><br /><br />
-    <div class="col s6 offset-s3">
+    <div class="col s4 offset-s4">
       <button
         style="background: #2b0045; width: 100%"
         class="btn btn-large waves-effect waves-light modal-trigger"
@@ -55,11 +55,13 @@
           <h4 class="title"><%=relationship.metadata.name%></h4>
         </li>
       </a>
-    </ul>
     <%}%>
+  </ul>
   </div>
-  <%}%> <%for(let relationship of relationships) {%>
-
+  <%}%> 
+  
+  
+  <%for(let relationship of relationships) {%>
   <div id="<%=relationship.their_did%>" class="modal">
     <div class="modal-content center-align">
       <%if(relationship.metadata.name) {%>
@@ -98,7 +100,7 @@
           style="background: #2b0045"
           class="btn btn-large waves-effect waves-light"
             type="submit"
-            onclick="validateProof(this.parentNode, <%=JSON.stringify(proof)%>)"
+            onclick="validateProof(this.parentNode, '<%= JSON.stringify(proof) %>')"
           >
             Validate
           </button>

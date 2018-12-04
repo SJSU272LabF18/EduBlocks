@@ -32,6 +32,9 @@
                     ><img src="images/logowhite.png"
                   /></a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
+                     
+                      <li> My Endpoint DID: <%=endpointDid%></li>
+
                     <li><a class="white-text" href="#">Logout</a></li>
                   </ul>
                   <br /><br />
@@ -49,9 +52,7 @@
                 </div>
               </nav>
 
-     <h5>  
-        My Endpoint DID: <%=endpointDid%>
-      </h5>
+ 
               <div class="row">
                     <% include credentials.ejs %> 
                     <% include relationships.ejs %> 
@@ -137,7 +138,7 @@
           } else {
             div.innerHTML =
               '<i class="fa fa-times" style="color:red;font-size:120px;"></i>';
-              alert("Validation Failed!, This is an invalid Credential");
+              alert("Validation Successful!, This is a Valid Credential");
           }
         };
       }
