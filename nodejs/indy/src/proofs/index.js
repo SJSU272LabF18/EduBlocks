@@ -27,7 +27,7 @@ exports.getProofRequests = async function(force) {
             },
             requested_predicates: {}
         };
-        let transcriptCredDef = await indy.issuer.getCredDefByTag('MyTranscript');
+        let transcriptCredDef = await indy.issuer.getCredDefByTag('AmritaTranscript');
         if(transcriptCredDef) {
             proofRequests['Transcript-Data'] = {
                 name: 'Transcript-Data',
@@ -49,6 +49,53 @@ exports.getProofRequests = async function(force) {
                 requested_predicates: {}
             }
         }
+
+        let greScoreCredDef = await indy.issuer.getCredDefByTag('GREScore');
+        if(greScoreCredDef) {
+            proofRequests['GREScore-Data'] = {
+                name: 'GREScore-Data',
+                version: '0.1',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': greScoreCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'gre_score',
+                        'restrictions': [{'cred_def_id': greScoreCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'gre_examdate',
+                        'restrictions': [{'cred_def_id': greScoreCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }
+        let toeflScoreCredDef = await indy.issuer.getCredDefByTag('TOEFLScore');
+        if(toeflScoreCredDef) {
+            proofRequests['TOEFLScore-Data'] = {
+                name: 'TOEFLScore-Data',
+                version: '0.1',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': toeflScoreCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'toefl_score',
+                        'restrictions': [{'cred_def_id': toeflScoreCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'toefl_examdate',
+                        'restrictions': [{'cred_def_id': toeflScoreCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }
+
+
     }
     return proofRequests;
 };

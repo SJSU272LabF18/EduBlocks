@@ -72,6 +72,24 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
             case "GPA":
                 value = "8.75";
                 break;
+            case "studentid":
+                value = "12345678";
+                break;
+            case "gre_score":
+                value = "320";
+                break;     
+            case "toefl_score":
+                value = "110";
+                break;           
+            case "passportno":
+                value = "J12345678";
+                break;    
+            case "gre_examdate":
+                value = "10/12/2017";
+                break; 
+            case "toefl_examdate":
+                value = "12/15/2017";
+                break; 
             default:
                 value = "someValue";
         }
