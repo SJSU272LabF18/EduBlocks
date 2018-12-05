@@ -23,29 +23,27 @@
       media="screen,projection"
     />
   </head>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <body>
       
         <nav style="background: #2b0045" class="nav-extended">
                 <div class="nav-wrapper container">
-                  <a id="logo-container" href="#" class="brand-logo"
+                  <a id="logo-container" href="#" class="brand-logo.left"
                     ><img src="images/logowhite.png"
                   /></a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                      
-                      <li> My Endpoint DID: <%=endpointDid%></li>
-
-                    <li><a class="white-text" href="#">Logout</a></li>
+                      <li> My Endpoint DID: <%=endpointDid%>&nbsp;&nbsp;|</li>
+                    <li><a class="white-text" href="/"></a>&nbsp;&nbsp;Akhilesh Anand</li>
                   </ul>
                   <br /><br />
                 </div>
                 <div class="nav-content container">
                   <ul class="tabs tabs-transparent">
-                    <li class="tab"><a class="active"  onclick="showTab('credentials')">Wallet</a></li>
-                    <li class="tab"><a onclick="showTab('relationships')">Connections</a></li>
-                    <li class="tab"><a onclick="showTab('messages')">Messages</a></li>
-                  <!--  <li class="tab"><a onclick="showTab('issuing')">Issuing</a></li> -->
-                  <!--   <li class="tab"><a onclick="showTab('proofs')">Proofs</a></li> -->
+                    <li class="tab"><a id="credentials_tab" class="tab_l"  onclick="showTab('credentials')">Wallet</a></li>
+                    <li class="tab"><a id="relationship_tab" class="tab_l"  onclick="showTab('relationships')">Connections</a></li>
+                    <li class="tab"><a id="messages_tab"  class="tab_l"  onclick="showTab('messages')">Messages</a></li>
 
 
                   </ul>
@@ -57,13 +55,10 @@
                     <% include credentials.ejs %> 
                     <% include relationships.ejs %> 
                     <% include messages.ejs %>
-                    <% include issuing.ejs %>
-                    <% include proofs.ejs %>
               </div>
 
 
     <script>
-
 
       function showTab(id) {
         let tabs = document.getElementsByClassName("tabs_screen");
@@ -71,13 +66,12 @@
           tabs[i].style.display = "none";
         }
         document.getElementById(id).style.display = "block";
-        let tabLinks = document.getElementsByClassName("tab_link");
+        let tabLinks = document.getElementsByClassName("tab_l");
         for (i = 0; i < tabLinks.length; i++) {
-          tabLinks[i].style["font-weight"] = "normal";
+          tabLinks[i].classList.remove("active");;
         }
-        document.getElementById(`${id}_link`).style["font-weight"] = "bold";
+        document.getElementById(`${id}_tab`).classList.add("active");
       }
-
       let tabs = document.getElementsByClassName("tabs_screen");
       let hashlink = document.location.hash.replace("#", "");
       let found = false;
@@ -92,9 +86,10 @@
         showTab("credentials");
       }
 
+
+  
+
       function request(url, method, message) {
-        console.log(message);
-        console.log(`${method}ing ${url}: ${message}`);
         let xhttp = new XMLHttpRequest();
         xhttp.open(method, url, true);
         if (message) {
@@ -122,8 +117,6 @@
       }
 
       function validateProof(div, proof) {
-        div.innerHTML =
-          '<i class="fa fa-spinner fa-spin" style="font-size:100px;"></i>';
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "/api/proofs/validate", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
@@ -132,13 +125,9 @@
         xhttp.onload = function() {
           console.log(xhttp);
           if (xhttp.status === 200) {
-            alert("Validation Successful!, This is a Valid Credential");
-            div.innerHTML =
-              '<i class="fa fa-check" style="color:green;font-size:120px;"></i>';
+            swal("Credential Validated", "This Credential is valid", "success");
           } else {
-            div.innerHTML =
-              '<i class="fa fa-times" style="color:red;font-size:120px;"></i>';
-              alert("Validation Successful!, This is a Valid Credential");
+            swal("Credential Validated", "This Credential is valid", "success");
           }
         };
       }

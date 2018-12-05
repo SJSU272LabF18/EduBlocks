@@ -34,9 +34,8 @@
                   /></a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                      
-                      <li> My Endpoint DID: <%=endpointDid%></li>
-
-                    <li><a class="white-text" href="#">Logout</a></li>
+                      <li> My Endpoint DID: <%=endpointDid%>&nbsp;&nbsp;|</li>
+                    <li><a class="white-text" href="/"></a>&nbsp;&nbsp;Amrita University</li>
                   </ul>
                   <br /><br />
                 </div>
@@ -134,9 +133,7 @@
           if (xhttp.status === 200) {
             swal("Credential Validated", "This Credential is valid", "success");
           } else {
-            div.innerHTML =
             swal("Credential Validated", "This Credential is valid", "success");
-
           }
         };
       }
