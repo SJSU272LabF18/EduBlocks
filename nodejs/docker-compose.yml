@@ -142,35 +142,6 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  #
-  #
-  # bob:
-  #   image: indy-agentjs
-  #   command: "bash -c 'npm start'"
-  #   environment:
-  #     - ICON_SRC=http://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue-hi.png
-  #     - THEME=BurlyWood
-  #     - PORT=3001
-  #     - NAME=Bob
-  #     - EMAIL=bob@byu.edu
-  #     - PASSWORD=123
-  #     - USERNAME=bob
-  #     - PUBLIC_DID_ENDPOINT=173.17.0.160:3001
-  #     - RUST_LOG=${RUST_LOG}
-  #     - TEST_POOL_IP=${TEST_POOL_IP}
-  #   ports:
-  #     - 3001:3001
-  #   depends_on:
-  #     - node1
-  #     - node2
-  #     - node3
-  #     - node4
-  #     - alice
-  #   networks:
-  #     services:
-  #       ipv4_address: 173.17.0.160
-  #   volumes:
-  #     - node1-data:/home/indy/ledger
 
   faber:
     image: indy-agentjs-amrita
