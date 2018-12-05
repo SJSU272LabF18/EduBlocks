@@ -181,7 +181,7 @@ services:
       dockerfile: ets.dockerfile
     command: "bash -c 'npm start'"
     environment:
-      - ICON_SRC=https://i.ytimg.com/vi/JUMufld7UcY/maxresdefault.jpg
+      - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
       - THEME=LightSteelBlue
       - PORT=3003
       - NAME=ETS 
@@ -212,7 +212,7 @@ services:
       dockerfile: sjsu.dockerfile
     command: "bash -c 'npm start'"
     environment:
-      - ICON_SRC=http://www.psdgraphics.com/file/bank-building-icon.jpg
+      - ICON_SRC=https://cdn2.iconfinder.com/data/icons/bubble-education-icons-1/360/School-512.png
       - THEME=Coral
       - PORT=3004
       - NAME=San Jose State University
