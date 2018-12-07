@@ -24,7 +24,7 @@ This process takes months and students have to produce their personal identifiab
 
 ## Getting Started
 Download and install Docker before proceeding.
-Clone the repository and Navigate to the nodejs folder on your terminal. Then Run the Following Commands.
+Clone the repository and Navigate to the app folder on your terminal. Then Run the Following Commands.
 
 ```
 ./manage build
