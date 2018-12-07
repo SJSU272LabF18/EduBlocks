@@ -25,6 +25,10 @@ This process takes months and students have to produce their personal identifiab
                         
 ## Getting Started
 Download and install Docker before proceeding.
+To check the version of docker and docker compose, use the commands:
+
+$ docker --version  
+$ docker-compose –version
 
 Clone the repository and Navigate to the app folder on your terminal. Then Run the Following Commands.
 
