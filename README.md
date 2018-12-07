@@ -28,21 +28,19 @@ Clone the repository and Navigate to the nodejs folder on your terminal. Then Ru
 
 ```
 ./manage build
-
 ```
  Let the application build, then 
 
 ```
 ./manage up
-
 ```
 
 The Application is now has 4 clients running on
 
-1. Student: localhost:3000 Username: akhilesh, Password:123
-1. Student: localhost:3002 Username: amrita, Password:123
-1. Student: localhost:3003 Username: ets, Password:123
-1. Student: localhost:3004 Username: sjsu, Password:123
+1. Student: http://localhost:3000 .   Username: akhilesh, Password:123
+1. Amrita: http://localhost:3002 .    Username: amrita, Password:123
+1. ETS: http://localhost:3003 .       Username: ets, Password:123
+1. SJSU: http://localhost:3004 .      Username: sjsu, Password:123
 
 
 
