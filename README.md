@@ -1,9 +1,8 @@
 
-# EduBlocks - Decentralized Digital Identity Management System 
+# EduBlocks - A Decentralized Digital Identity Management System platform
+EduBlocks is a blockchain based custom built for the education sector that students, universities, government agencies can use to issue and verify credentials like transcripts, test scores, certifications, etc.
 
-Implement a decentralized digital identify management system using Hyperledger to demonstrate below use case.
-
-## Overview:
+## Background:
 
 International students applying to a  university go through a long and painful process of getting the required credentials from various issuing authorities/intermediaries like below to apply.
 
@@ -14,7 +13,7 @@ International students applying to a  university go through a long and painful p
 
 This process takes months and students have to produce their personal identifiable information (PII) data every time to each of authorities. Also, these authorities additionally request students to provide proof of identity to provide the service. The student's identity is replicated across the intermediaries centralized systems. This data is now not only vulnerable to potential information threats, but also potential misuse by the agencies themselves to further their own business interests. With a decentralized blockchain solution, there's no need for any of the authorities to collect and store personal and identity data. Students will own their data and will only provide access to minimum required data that each of the intermediary requires to provide their service. Once approved, the credential is then added to the students wallet. Since adding credentials would be transactions on the blockchain, they are verified and therefore can be trusted by all authorities. It also makes data more secured and transparent to all parties involved. The student can then present the verified credentials along with application form to the university thereby enabling them to make a faster decision.
 
-## Project Report:
+## Project Overview:
 <a href="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/docs/Edublocks%20-%20Project%20Report.pdf">EduBlocks Platform</a> 
 
 ## Project Team: 
@@ -26,6 +25,7 @@ This process takes months and students have to produce their personal identifiab
                         
 ## Getting Started
 Download and install Docker before proceeding.
+
 Clone the repository and Navigate to the app folder on your terminal. Then Run the Following Commands.
 
 ```
@@ -40,9 +40,9 @@ Clone the repository and Navigate to the app folder on your terminal. Then Run t
 The Application is now has 4 clients running on
 
 1. Student: http://localhost:3000 .   Username: akhilesh, Password:123
-1. Amrita: http://localhost:3002 .    Username: amrita, Password:123
+1. Amrita College: http://localhost:3002 .    Username: amrita, Password:123
 1. ETS: http://localhost:3003 .       Username: ets, Password:123
-1. SJSU: http://localhost:3004 .      Username: sjsu, Password:123
+1. San Jose State University: http://localhost:3004 .      Username: sjsu, Password:123
 
 
 ## Using The Application
@@ -65,7 +65,7 @@ When a connection Request is sent both , recipient and sender recieve a  message
 <br><br>
 
 
-### Offering a Crendential
+### Issuing a Crendential
 This can be done only after establishing a connection as detailed in the step above.
 
 A credential can be offered by any institution. In order to issue a credential, the client should create a schema of the credential that they intend to offer. With this schema, a credential defenition is created. 
@@ -115,7 +115,6 @@ Once proof request is submnitted and the requestee consents, the credential appe
 
 <br><br>
  
- 
 
 ### Viewing Wallet
 A user can view his/her wallet that shows all the credentials obtained over time.
@@ -131,7 +130,6 @@ A user can view his/her wallet that shows all the credentials obtained over time
 </div>
 
 <br><br>
-
 
 
 
