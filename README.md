@@ -1,6 +1,6 @@
 
 # EduBlocks - A Decentralized Digital Identity Management System platform
-EduBlocks is a custom built platform for the education sector that universities, government agencies, other institutions can onboard to issue and verify credentials like transcripts, test scores, certifications, etc to students. It also lets students request view their credentials, establish connections and accept/reject credentials/proofs.
+EduBlocks is a custom built platform for the education sector that universities, government agencies and other institutions can onboard to issue and verify credentials like transcripts, test scores, certifications, etc to students. It also lets students view their credentials, establish connections, send credentials and accept/reject credentials/proofs requests.
 
 ## Background:
 
