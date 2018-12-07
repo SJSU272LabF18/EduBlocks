@@ -90,7 +90,7 @@ An instituion can request a proof that from another entity. This is basically of
 
 The Credential defenition of the credential that is being requested is obtained from the instituition that provided it. This credential defenition is copied on to dialog in the proofs tab after selecting other proofs. When The proof request is submitted the entity that it is requested from recieves a message that informs them of the required attributes that the requester wants. 
 
-When the requestee consents, the credential appears as a verifiable proof on the connections tab under the requestees details. Clicking on Validate, cross verifies the veracity of the credential and assuers the requester of its autheticity.
+
 
 <div align="center">
     <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/proofrequest.png" </img> 
@@ -99,7 +99,8 @@ When the requestee consents, the credential appears as a verifiable proof on the
 <br><br>
  
 ### Verifying Credentials
-Once proof request is submnitted and accepted by the student, it shows up as a verifable credential on SJSU app where admin can cryptographically verify the credential and trust it.
+
+Once proof request is submnitted and the requestee consents, the credential appears as a verifiable proof on the connections tab under the requestees details. Clicking on Validate, cross verifies the veracity of the credential and assuers the requester of its autheticity.
 
 <div align="center">
     <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/sjsu.png" </img> 
