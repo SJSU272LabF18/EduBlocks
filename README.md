@@ -77,7 +77,7 @@ To offer the credential, the instituion clubs the details of the student (stored
 The Student wil now have recieved a credential offer on his messages tab and when accepted , it can be viewed as a credential on the wallet.Just  like the government ID, This credential can also be used to verify the identity of the entity possesing the credential.
 
 <div align="center">
-    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/issuing.png" </img> 
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/Issuing.png" </img> 
 </div>
 
 <br><br>
