@@ -102,9 +102,6 @@ The Credential defenition of the credential that is being requested is obtained 
 
 Once proof request is submnitted and the requestee consents, the credential appears as a verifiable proof on the connections tab under the requestees details. Clicking on Validate, cross verifies the veracity of the credential and assuers the requester of its autheticity.
 
-<div align="center">
-    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/sjsu.png" </img> 
-</div>
 
 <div align="center">
     <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/verification.png" </img> 
