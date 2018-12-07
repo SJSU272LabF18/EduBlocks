@@ -102,6 +102,10 @@ When the requestee consents, the credential appears as a verifiable proof on the
 Once proof request is submnitted and accepted by the student, it shows up as a verifable credential on SJSU app where admin can cryptographically verify the credential and trust it.
 
 <div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/sjsu.png" </img> 
+</div>
+
+<div align="center">
     <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/verification.png" </img> 
 </div>
 
