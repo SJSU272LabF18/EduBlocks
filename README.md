@@ -59,7 +59,7 @@ When a connection Request is sent both , recipient and sender recieve a  message
 <br><br>
 
 <div align="center">
-    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/Connection2.png" </img> 
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/Connection2%20.png" </img> 
 </div>
 
 <br><br>
