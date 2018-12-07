@@ -3,7 +3,7 @@
 
 Implement a decentralized digital identify management system using Hyperledger to demonstrate below use case.
 
-### Project Abstract:
+## Overview:
 
 International students applying to a  university go through a long and painful process of getting the required credentials from various issuing authorities/intermediaries like below to apply.
 
@@ -14,14 +14,16 @@ International students applying to a  university go through a long and painful p
 
 This process takes months and students have to produce their personal identifiable information (PII) data every time to each of authorities. Also, these authorities additionally request students to provide proof of identity to provide the service. The student's identity is replicated across the intermediaries centralized systems. This data is now not only vulnerable to potential information threats, but also potential misuse by the agencies themselves to further their own business interests. With a decentralized blockchain solution, there's no need for any of the authorities to collect and store personal and identity data. Students will own their data and will only provide access to minimum required data that each of the intermediary requires to provide their service. Once approved, the credential is then added to the students wallet. Since adding credentials would be transactions on the blockchain, they are verified and therefore can be trusted by all authorities. It also makes data more secured and transparent to all parties involved. The student can then present the verified credentials along with application form to the university thereby enabling them to make a faster decision.
 
-## Presented By: 
+## Project Report:
+<a href="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/docs/Edublocks%20-%20Project%20Report.pdf">EduBlocks Platform</a> 
+
+## Project Team: 
 --------------
 1. Akhilesh Anand 
 2. Jasmine Dhunna 
 3. Sanjay Nag Bangalore Ravishankar
 4. Vishwanath Manvi
                         
-
 ## Getting Started
 Download and install Docker before proceeding.
 Clone the repository and Navigate to the app folder on your terminal. Then Run the Following Commands.
@@ -43,12 +45,10 @@ The Application is now has 4 clients running on
 1. SJSU: http://localhost:3004 .      Username: sjsu, Password:123
 
 
-
-
 ## Using The Application
 
-### Forming a Connection
-To Form a connection, Copy the *EndpointDID* **of the Person you want to connect to**, you can find this on the top right of the Navigation Toolbar into the dialog that opens when you hit create a connection, In the *connections* Tab, 
+### Establishing a Connection
+To establish a connection, Copy the *EndpointDID* **of the Person you want to connect to**, you can find this on the top right of the Navigation Toolbar into the dialog that opens when you hit create a connection, In the *connections* Tab, 
 
 When a connection Request is sent both , recipient and sender recieve a  message (Can be Viewed on Mesage Tab) to agree to Share Their Names with each other. This establishes a trust relationship between the two, as the name being shared is from a verifiable credential issued to both of them by the government (In case of the Student, it could be construed as an SSN and in case of the institution, a government licesnce).
 
