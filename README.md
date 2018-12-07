@@ -53,11 +53,16 @@ To Form a connection, Copy the *EndpointDID* **of the Person you want to connect
 When a connection Request is sent both , recipient and sender recieve a  message (Can be Viewed on Mesage Tab) to agree to Share Their Names with each other. This establishes a trust relationship between the two, as the name being shared is from a verifiable credential issued to both of them by the government (In case of the Student, it could be construed as an SSN and in case of the institution, a government licesnce).
 
 <div align="center">
-    <img src="./screenshots/connection1.png" width="400px"</img> 
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/Connection1.png" </img> 
 </div>
- ![image](./screenshots/connection1.png)
- 
- ![](../screenshots/connection2.png)
+
+<br><br>
+
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/Connection2.png" </img> 
+</div>
+
+<br><br>
 
 
 ### Offering a Crendential
@@ -71,7 +76,12 @@ To offer the credential, the instituion clubs the details of the student (stored
 
 The Student wil now have recieved a credential offer on his messages tab and when accepted , it can be viewed as a credential on the wallet.Just  like the government ID, This credential can also be used to verify the identity of the entity possesing the credential.
 
- ![](../screenshots/Issuing.png)
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/issuing.png" </img> 
+</div>
+
+<br><br>
+
 
 ### Requesting Proof
 This can be done only after establishing a connection as detailed in the 1st step .
@@ -82,24 +92,43 @@ The Credential defenition of the credential that is being requested is obtained 
 
 When the requestee consents, the credential appears as a verifiable proof on the connections tab under the requestees details. Clicking on Validate, cross verifies the veracity of the credential and assuers the requester of its autheticity.
 
- ![](../screenshots/proofrequest.png)
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/proofrequest.png" </img> 
+</div>
+
+<br><br>
  
 ### Verifying Credentials
 Once proof request is submnitted and accepted by the student, it shows up as a verifable credential on SJSU app where admin can cryptographically verify the credential and trust it.
 
- ![](../screenshots/verification.png)
- 
- ![](../screenshots/verification2.png)
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/verification.png" </img> 
+</div>
+
+<br><br>
+
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/verification2.png" </img> 
+</div>
+
+<br><br>
  
  
 
 ### Viewing Wallet
 A user can view his/her wallet that shows all the credentials obtained over time.
 
- ![](../screenshots/wallet.png)
- 
- ![](../screenshots/wallet2.png)
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/wallet.png" </img> 
+</div>
 
+<br><br>
+
+<div align="center">
+    <img src="https://github.com/SJSU272LabF18/Project-Team-14/blob/master/screenshots/wallet2.png" </img> 
+</div>
+
+<br><br>
 
 
 
