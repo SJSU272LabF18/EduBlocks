@@ -47,21 +47,17 @@
                     <li class="tab"><a id="messages_tab"  class="tab_l"  onclick="showTab('messages')">Messages</a></li>
                     <li class="tab"><a id="issuing_tab"class="tab_l"   onclick="showTab('issuing')">Issuing</a></li>
                     <li class="tab"><a id="proofs_tab" class="tab_l"  onclick="showTab('proofs')">Proofs</a></li>
-
-
                   </ul>
                 </div>
               </nav>
-
- 
               <div class="row">
-                    <% include dash.ejs %> 
-                    <% include credentials.ejs %> 
-                    <% include relationships.ejs %> 
-                    <% include messages.ejs %>
-                    <% include issuing.ejs %>
-                    <% include proofs.ejs %>
-              </div>
+                <% include dash.ejs %> 
+                <% include credentials.ejs %> 
+                <% include relationships.ejs %> 
+                <% include messages.ejs %>
+                <% include issuing.ejs %>
+                <% include proofs.ejs %>
+          </div>              
 
 
     <script>
