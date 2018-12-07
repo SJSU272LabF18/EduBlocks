@@ -52,7 +52,10 @@ To Form a connection, Copy the *EndpointDID* **of the Person you want to connect
 
 When a connection Request is sent both , recipient and sender recieve a  message (Can be Viewed on Mesage Tab) to agree to Share Their Names with each other. This establishes a trust relationship between the two, as the name being shared is from a verifiable credential issued to both of them by the government (In case of the Student, it could be construed as an SSN and in case of the institution, a government licesnce).
 
- ![](./screenshots/connection1.png)
+<div align="center">
+    <img src="./screenshots/connection1.png" width="400px"</img> 
+</div>
+ ![image](./screenshots/connection1.png)
  
  ![](../screenshots/connection2.png)
 
